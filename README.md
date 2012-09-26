@@ -8,7 +8,7 @@
  * All method declarations should be documented.
  * Comments should be hard-wrapped at 80 characters.
  * Comments should be [Tomdoc](http://tomdoc.org/)-style.
- * Use `#pragma mark`'s to categorize methods and protocol implementations.
+ * Use `#pragma mark`s to categorize methods and protocol implementations.
 
 ## Properties and Instance Variables
 
