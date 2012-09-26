@@ -18,6 +18,8 @@
  * Use dot-syntax for side effect-free state accessing.
  * Always declare memory-management semantics even on `readonly` properties.
  * Declare properties `readonly` if they are only set once in `-init`.
+ * Don't use `@synthesize` unless the compiler requires it.
+ * Instance variables should be prefixed with an underscore (just like when implicitly synthesized).
 
 ## Control Structures
 
