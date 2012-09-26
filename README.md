@@ -15,7 +15,7 @@
  * Never declare an ivar unless you need to change its type from its declared property.
  * Prefer exposing an immutable type for a property if it being mutable is an implementation detail. This is a valid reason to declare an ivar for a property.
  * Don't access an ivar unless you're in `-init` or `-dealloc`.
- * Use dot-syntax for side effect-free state accessing.
+ * Use dot-syntax for "simple" getters and setters, including class methods (like `NSFileManager.defaultManager`).
  * Always declare memory-management semantics even on `readonly` properties.
  * Declare properties `readonly` if they are only set once in `-init`.
 
