@@ -74,6 +74,8 @@ NSArray *theShit = @[ @1, @2, @3 ];
 NSDictionary *keyedShit = @{ GHDidCreateStyleGuide: @YES };
 ```
 
+* Use object literals, boxed expressions, and subscripting over the older, grosser alternatives.
+
 ## Categories
 
  * Categories should be named for the sort of functionality they provide. Don't create umbrella categories.
