@@ -10,7 +10,7 @@
  * Comments should be [Tomdoc](http://tomdoc.org/)-style.
  * Use `#pragma mark`s to categorize methods and protocol implementations.
 
-## Properties and Instance Variables
+## Properties, Instance Variables, and Declarations
 
  * Never declare an ivar unless you need to change its type from its declared property.
  * Prefer exposing an immutable type for a property if it being mutable is an implementation detail. This is a valid reason to declare an ivar for a property.
@@ -20,6 +20,12 @@
  * Declare properties `readonly` if they are only set once in `-init`.
  * Don't use `@synthesize` unless the compiler requires it.
  * Instance variables should be prefixed with an underscore (just like when implicitly synthesized).
+	* There shouldn't be a space between a cast and the variable being cast.
+
+``` objc
+NewType a = (OldType)b;
+```
+
 
 ## Control Structures
 
