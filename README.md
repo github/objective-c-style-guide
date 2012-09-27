@@ -41,6 +41,8 @@ if (something == nil) {
 if (shitIsBad) return;
 ```
 
+* Ternary operators should be wrapped in parentheses.
+
 ## Blocks
 
  * Blocks should have a space between their return type and name.
