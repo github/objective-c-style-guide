@@ -10,7 +10,7 @@
  * Comments should be [Tomdoc](http://tomdoc.org/)-style.
  * Use `#pragma mark`s to categorize methods and protocol implementations.
 
-## Properties, Instance Variables, and Declarations
+## Properties and Instance Variables
 
  * Never declare an ivar unless you need to change its type from its declared property.
  * Prefer exposing an immutable type for a property if it being mutable is an implementation detail. This is a valid reason to declare an ivar for a property.
@@ -20,17 +20,20 @@
  * Declare properties `readonly` if they are only set once in `-init`.
  * Don't use `@synthesize` unless the compiler requires it.
  * Instance variables should be prefixed with an underscore (just like when implicitly synthesized).
-	* There shouldn't be a space between a cast and the variable being cast.
+
+## Expressions
+
+ * Use object literals, boxed expressions, and subscripting over the older, grosser alternatives.
+ * Comparisons should be explicit for everything except `BOOL`s.
+ * Prefer positive comparisons to negative.
+ * There shouldn't be a space between a cast and the variable being cast.
 
 ``` objc
 NewType a = (OldType)b;
 ```
 
-
 ## Control Structures
 
- * Comparisons should be explicit for everything except `BOOL`s.
- * Prefer positive comparisons to negative.
  * Always surround `if` bodies with curly braces if there is an `else`. Single-line `if` bodies without an `else` should be on the same line as the `if`. 
  * All curly braces should begin on the same line as their associated statement. They should end on a new line.
  * Put a single space after keywords and before their parentheses.
@@ -73,8 +76,6 @@ NSArray *theShit = @[ @1, @2, @3 ];
 
 NSDictionary *keyedShit = @{ GHDidCreateStyleGuide: @YES };
 ```
-
-* Use object literals, boxed expressions, and subscripting over the older, grosser alternatives.
 
 ## Categories
 
