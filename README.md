@@ -41,13 +41,13 @@ NewType a = (OldType)b;
  * No spaces between parentheses and their contents.
 
 ```objc
+if (shitIsBad) return;
+
 if (something == nil) {
 	// do stuff
 } else {
 	// do other stuff
 }
-
-if (shitIsBad) return;
 ```
 
 ## Blocks
