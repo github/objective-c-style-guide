@@ -21,10 +21,19 @@
  * Don't use `@synthesize` unless the compiler requires it.
  * Instance variables should be prefixed with an underscore (just like when implicitly synthesized).
 
-## Control Structures
+## Expressions
 
+ * Use object literals, boxed expressions, and subscripting over the older, grosser alternatives.
  * Comparisons should be explicit for everything except `BOOL`s.
  * Prefer positive comparisons to negative.
+ * There shouldn't be a space between a cast and the variable being cast.
+
+``` objc
+NewType a = (OldType)b;
+```
+
+## Control Structures
+
  * Always surround `if` bodies with curly braces if there is an `else`. Single-line `if` bodies without an `else` should be on the same line as the `if`. 
  * All curly braces should begin on the same line as their associated statement. They should end on a new line.
  * Put a single space after keywords and before their parentheses.
