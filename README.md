@@ -26,6 +26,14 @@
  * Use object literals, boxed expressions, and subscripting over the older, grosser alternatives.
  * Comparisons should be explicit for everything except `BOOL`s.
  * Prefer positive comparisons to negative.
+ * Long form ternary operators should be wrapped in parentheses and only used for assignment and arguments.
+
+`Blah *a = (stuff == thing ? foo : bar);`
+
+* Short form, `nil` coalescing ternary operators should avoid parentheses.
+
+`Blah *b = thingThatCouldBeNil ?: defaultValue;`
+
  * There shouldn't be a space between a cast and the variable being cast.
 
 ``` objc
