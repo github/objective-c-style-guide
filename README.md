@@ -37,7 +37,7 @@
  * There shouldn't be a space between a cast and the variable being cast.
 
 ``` objc
-NewType a = (OldType)b;
+NewType a = (NewType)b;
 ```
 
 ## Control Structures
