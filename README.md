@@ -70,11 +70,11 @@ if (something == nil) {
 
 ```objc
 void (^blockName1)(void) = ^{
-   // do some things
+    // do some things
 };
 
 id (^blockName2)(id) = ^ id (id args) {
-   // do some things
+    // do some things
 };
 ```
 
