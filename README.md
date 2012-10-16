@@ -18,7 +18,7 @@
  * Use dot-syntax for "simple" getters and setters, including class methods (like `NSFileManager.defaultManager`).
  * Always declare memory-management semantics even on `readonly` properties.
  * Declare properties `readonly` if they are only set once in `-init`.
- * Don't use `@synthesize` unless the compiler requires it.
+ * Don't use `@synthesize` unless the compiler requires it. Note that optional properties in protocols must be explicitly synthesized in order to exist.
  * Instance variables should be prefixed with an underscore (just like when implicitly synthesized).
 
 ## Expressions
