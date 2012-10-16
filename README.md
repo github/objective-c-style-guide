@@ -10,19 +10,24 @@
  * Comments should be [Tomdoc](http://tomdoc.org/)-style.
  * Use `#pragma mark`s to categorize methods and protocol implementations.
 
-## Properties and Instance Variables
+## Declarations
 
  * Never declare an ivar unless you need to change its type from its declared property.
  * Prefer exposing an immutable type for a property if it being mutable is an implementation detail. This is a valid reason to declare an ivar for a property.
- * Don't access an ivar unless you're in `-init` or `-dealloc`.
- * Use dot-syntax for "simple" getters and setters, including class methods (like `NSFileManager.defaultManager`).
  * Always declare memory-management semantics even on `readonly` properties.
  * Declare properties `readonly` if they are only set once in `-init`.
  * Don't use `@synthesize` unless the compiler requires it. Note that optional properties in protocols must be explicitly synthesized in order to exist.
  * Instance variables should be prefixed with an underscore (just like when implicitly synthesized).
+ * C function declarations should have no space before the opening parenthesis, and should be namespaced just like a class.
+
+```objc
+void GHAwesomeFunction(BOOL hasSomeArgs);
+```
 
 ## Expressions
 
+ * Don't access an ivar unless you're in `-init` or `-dealloc`.
+ * Use dot-syntax for "simple" getters and setters, including class methods (like `NSFileManager.defaultManager`).
  * Use object literals, boxed expressions, and subscripting over the older, grosser alternatives.
  * Comparisons should be explicit for everything except `BOOL`s.
  * Prefer positive comparisons to negative.
