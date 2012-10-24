@@ -13,6 +13,7 @@
 ## Declarations
 
  * Never declare an ivar unless you need to change its type from its declared property.
+ * Don’t use line breaks in method declarations.
  * Prefer exposing an immutable type for a property if it being mutable is an implementation detail. This is a valid reason to declare an ivar for a property.
  * Always declare memory-management semantics even on `readonly` properties.
  * Declare properties `readonly` if they are only set once in `-init`.
