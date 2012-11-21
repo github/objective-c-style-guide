@@ -50,9 +50,9 @@ Blah *b = thingThatCouldBeNil ?: defaultValue;
 NewType a = (NewType)b;
 ```
 
-## Enumerators
+## Enumerations
 
-When declaring enumerators, always use fixed backing type declarative syntax, like below:
+When declaring enumerations, always use fixed backing type declarative syntax, like below:
 
 ```
 typedef enum GHStateEnumerator : NSUInteger {
