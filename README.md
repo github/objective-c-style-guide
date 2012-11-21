@@ -50,6 +50,84 @@ Blah *b = thingThatCouldBeNil ?: defaultValue;
 NewType a = (NewType)b;
 ```
 
+## Enumerators
+
+When declaring enumerators, always use fixed backing type declarative syntax, like below:
+
+```
+typedef enum GHStateEnumerator : NSUInteger {
+	GHStateEnumeratorFirstState,
+	GHStateEnumeratorSecondState,
+	GHStateEnumeratorThirdState,
+} GHStateEnumerator;
+```
+
+Over something like this, or any derivative of this syntax:
+
+```objc
+enum {
+	GHStateEnumeratorFirstState,
+	GHStateEnumeratorSecondState,
+	GHStateEnumeratorThirdState,
+};
+typedef NSUInteger GHStateEnumerator;
+```
+
+And where possible, let the compiler infer the enumerated values:
+
+```objc
+typedef enum GHStateEnumerator : NSUInteger {
+	GHStateEnumeratorFirstState,
+	GHStateEnumeratorSecondState,
+	GHStateEnumeratorThirdState,
+} GHStateEnumerator;
+```
+
+Instead of this:
+
+```objc
+typedef enum GHStateEnumerator : NSUInteger {
+	GHStateEnumeratorFirstState = 0,
+	GHStateEnumeratorSecondState = 1,
+	GHStateEnumeratorThirdState = 2,
+} GHStateEnumerator;
+```
+
+Unless you need this, for some internal reason:
+
+```objc
+typedef enum GHStateEnumerator : NSUInteger {
+	GHStateEnumeratorFirstState = 33,
+	GHStateEnumeratorSecondState = 54,
+	GHStateEnumeratorThirdState = 92,
+} GHStateEnumerator;
+```
+
+And when specifying maskable items, mask them appropriately:
+
+```objc
+typedef enum GHStateEnumerator : NSUInteger {
+	GHStateEnumeratorFirstState			= (0 << 0),
+	GHStateEnumeratorSecondState		= (1 << 5),
+	GHStateEnumeratorThirdState			= (1 << 8),
+} GHStateEnumerator;
+```
+
+Also, you must specify documentation for both the enumerator and its values:
+
+```objc
+// A GHStateEnumerator is used to determine the current state of the Objective-C Conventions.
+//
+// GHStateEnumeratorFirstState  - This documentation sucks.
+// GHStateEnumeratorSecondState - Don't bother reading it.
+// GHStateEnumeratorThirdState  - Why is it here anyways?
+typedef enum GHStateEnumerator : NSUInteger {
+	GHStateEnumeratorFirstState,
+	GHStateEnumeratorSecondState,
+	GHStateEnumeratorThirdState,
+} GHStateEnumerator;
+```
+
 ## Control Structures
 
  * Always surround `if` bodies with curly braces if there is an `else`. Single-line `if` bodies without an `else` should be on the same line as the `if`. 
