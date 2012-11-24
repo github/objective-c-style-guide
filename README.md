@@ -52,70 +52,10 @@ NewType a = (NewType)b;
 
 ## Enumerations
 
-When declaring enumerations, always use fixed backing type declarative syntax, like below:
+When declaring enumerations, always use fixed backing type declarative syntax, and where possible, let the compiler infer the enumerated values.
+Also, you must specify documentation for both the enumerator and its values. An example of an enumeration with proper syntax is below:
 
 ```
-typedef enum GHStateEnumerator : NSUInteger {
-	GHStateEnumeratorFirstState,
-	GHStateEnumeratorSecondState,
-	GHStateEnumeratorThirdState,
-} GHStateEnumerator;
-```
-
-Over something like this, or any derivative of this syntax:
-
-```objc
-enum {
-	GHStateEnumeratorFirstState,
-	GHStateEnumeratorSecondState,
-	GHStateEnumeratorThirdState,
-};
-typedef NSUInteger GHStateEnumerator;
-```
-
-And where possible, let the compiler infer the enumerated values:
-
-```objc
-typedef enum GHStateEnumerator : NSUInteger {
-	GHStateEnumeratorFirstState,
-	GHStateEnumeratorSecondState,
-	GHStateEnumeratorThirdState,
-} GHStateEnumerator;
-```
-
-Instead of this:
-
-```objc
-typedef enum GHStateEnumerator : NSUInteger {
-	GHStateEnumeratorFirstState = 0,
-	GHStateEnumeratorSecondState = 1,
-	GHStateEnumeratorThirdState = 2,
-} GHStateEnumerator;
-```
-
-Unless you need this, for some internal reason:
-
-```objc
-typedef enum GHStateEnumerator : NSUInteger {
-	GHStateEnumeratorFirstState = 33,
-	GHStateEnumeratorSecondState = 54,
-	GHStateEnumeratorThirdState = 92,
-} GHStateEnumerator;
-```
-
-And when specifying maskable items, mask them appropriately:
-
-```objc
-typedef enum GHStateEnumerator : NSUInteger {
-	GHStateEnumeratorFirstState			= (0 << 0),
-	GHStateEnumeratorSecondState		= (1 << 5),
-	GHStateEnumeratorThirdState			= (1 << 8),
-} GHStateEnumerator;
-```
-
-Also, you must specify documentation for both the enumerator and its values:
-
-```objc
 // A GHStateEnumerator is used to determine the current state of the Objective-C Conventions.
 //
 // GHStateEnumeratorFirstState  - This documentation sucks.
@@ -125,6 +65,26 @@ typedef enum GHStateEnumerator : NSUInteger {
 	GHStateEnumeratorFirstState,
 	GHStateEnumeratorSecondState,
 	GHStateEnumeratorThirdState,
+} GHStateEnumerator;
+```
+
+Only specify explicit values if they are required for some internal reason:
+
+```objc
+typedef enum GHStateEnumerator : NSUInteger {
+	GHStateEnumeratorFirstState 	= 33,
+	GHStateEnumeratorSecondState	= 54,
+	GHStateEnumeratorThirdState 	= 92,
+} GHStateEnumerator;
+```
+
+Or when specifying maskable items, mask them appropriately, leaving parenthesis around the assigned value:
+
+```objc
+typedef enum GHStateEnumerator : NSUInteger {
+	GHStateEnumeratorFirstState			= (0 << 0),
+	GHStateEnumeratorSecondState		= (1 << 5),
+	GHStateEnumeratorThirdState			= (1 << 8),
 } GHStateEnumerator;
 ```
 
