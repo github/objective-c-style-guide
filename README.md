@@ -3,12 +3,43 @@
  * Tabs, not spaces.
  * End files with a newline.
 
-## Documentation
+## Documentation and Organization
 
  * All method declarations should be documented.
  * Comments should be hard-wrapped at 80 characters.
  * Comments should be [Tomdoc](http://tomdoc.org/)-style.
- * Use `#pragma mark`s to categorize methods and protocol implementations.
+ * Use `#pragma mark`s to categorize methods into functional groupings and protocol implementations, following this general structure:
+
+```objc
+#pragma mark Properties
+
+@dynamic someProperty;
+
+- (void)setCustomProperty:(id)value {}
+
+#pragma mark Lifecycle
+
++ (id)objectWithThing:(id)thing {}
+- (id)init {}
+
+#pragma mark Drawing
+
+- (void)drawRect:(CGRect) {}
+
+#pragma mark Another functional grouping
+
+#pragma mark GHSuperclass
+
+- (void)someOverriddenMethod {}
+
+#pragma mark NSCopying
+
+- (id)copyWithZone:(NSZone *)zone {}
+
+#pragma mark NSObject
+
+- (NSString *)description {}
+```
 
 ## Declarations
 
