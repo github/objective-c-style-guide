@@ -22,6 +22,7 @@
  * Don't put a space between an object type and the protocol it conforms to.
  
 ```objc
+@property (attributes) id<Protocol> object;
 @property (nonatomic, strong) NSObject<Protocol> *object;
 ```
  
