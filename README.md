@@ -32,7 +32,8 @@
 void GHAwesomeFunction(BOOL hasSomeArgs);
 ```
 
-* Constructors should return `instancetype` rather than `id`.
+ * Constructors should return `instancetype` rather than `id`.
+
 ## Expressions
 
  * Don't access an ivar unless you're in `-init` or `-dealloc`.
