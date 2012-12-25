@@ -98,15 +98,17 @@ NewType a = (NewType)b;
  * Put a single space after keywords and before their parentheses.
  * Return and break early.
  * No spaces between parentheses and their contents.
+ * Leave a blank line after a multi-line control structure if it's followed by another statement.
 
 ```objc
 if (shitIsBad) return;
-
 if (something == nil) {
 	// do stuff
 } else {
 	// do other stuff
 }
+
+[obj doEvenMoreThingsAfterABlankLine];
 ```
 
 ## Blocks
