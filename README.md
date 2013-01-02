@@ -2,6 +2,7 @@
 
  * Tabs, not spaces.
  * End files with a newline.
+ * Make liberal use of vertical whitespace to divide code into logical chunks.
 
 ## Documentation and Organization
 
