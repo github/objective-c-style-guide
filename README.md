@@ -67,6 +67,16 @@ void GHAwesomeFunction(BOOL hasSomeArgs);
 
  * Constructors should generally return `instancetype` rather than `id`.
 
+ * Prefer C99 struct initialiser syntax to helper functions.
+
+ ```objc
+  CGRect rect = { .origin.x = 3.0, .origin.y = 12.0, .size.width = 15.0, size.height = 80.0 };
+ 
+  // rather than
+  
+   NSRect rect  = CGRectMake(3.0, 12.0, 15.0, 80.0);
+   ```
+
 ## Expressions
 
  * Don't access an ivar unless you're in `-init` or `-dealloc`.
