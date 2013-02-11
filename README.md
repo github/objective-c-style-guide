@@ -73,7 +73,7 @@ CGRect rect = { .origin.x = 3.0, .origin.y = 12.0, .size.width = 15.0, .size.hei
 
 // rather than
 
-NSRect rect  = CGRectMake(3.0, 12.0, 15.0, 80.0);
+CGRect rect = CGRectMake(3.0, 12.0, 15.0, 80.0);
 ```
 
 ## Expressions
