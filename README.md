@@ -92,6 +92,16 @@ Blah *b = thingThatCouldBeNil ?: defaultValue;
 NewType a = (NewType)b;
 ```
 
+ * Masked enums should be wrapped in parentheses.
+
+```objc
+// do this if single item
+[jackson rockMyWorldWithOptions:MJAwesomenessMoonwalk];
+
+// do this if multiple options
+[jackson rockMyWorldWithOptions:(MJAwesomenessMoonwalk|MJAwesomenessReverse)];
+```
+
 ## Control Structures
 
  * Always surround `if` bodies with curly braces if there is an `else`. Single-line `if` bodies without an `else` should be on the same line as the `if`. 
