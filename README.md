@@ -33,7 +33,7 @@ void GHAwesomeFunction(BOOL hasSomeArgs);
 ```
 
  * Constructors should generally return `instancetype` rather than `id`.
- * Variable names should be camel-cased.
+ * Variable and property names should be camel-cased. Avoid using acronyms and abbreviations.
 
 ## Expressions
 
