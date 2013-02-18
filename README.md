@@ -133,6 +133,7 @@ id (^blockName2)(id) = ^ id (id args) {
 
 ## Literals
 
+ * Avoid making numbers a specific type unless necessary (for example, prefer `5` to `5.0`, and `5.3` to `5.3f`).
  * The contents of array and dictionary literals should have a space on both sides.
  * Dictionary literals should have no space between the key and the colon, and a single space between colon and value.
 
