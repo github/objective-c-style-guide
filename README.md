@@ -72,7 +72,7 @@ void GHAwesomeFunction(BOOL hasSomeArgs);
  * Prefer C99 struct initialiser syntax to helper functions (such as `CGRectMake()`).
 
 ```objc
-  CGRect rect = { .origin.x = 3.0, .origin.y = 12.0, .size.width = 15.0, size.height = 80.0 };
+  CGRect rect = { .origin.x = 3.0, .origin.y = 12.0, .size.width = 15.0, .size.height = 80.0 };
    ```
 
 ## Expressions
