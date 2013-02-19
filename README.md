@@ -68,7 +68,7 @@ Unless explicitly contradicted below, assume that all of Apple's guidelines appl
 void GHAwesomeFunction(BOOL hasSomeArgs);
 ```
 
- * Constructors should generally return `instancetype` rather than `id`.
+ * Constructors should generally return [`instancetype`](http://clang.llvm.org/docs/LanguageExtensions.html#related-result-types) rather than `id`.
  * Prefer C99 struct initialiser syntax to helper functions (such as `CGRectMake()`).
 
 ```objc
