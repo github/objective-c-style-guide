@@ -82,6 +82,7 @@ if (something == nil) {
  * Blocks should have a space between their return type and name.
  * Block definitions should omit their return type when possible.
  * Block definitions should omit their arguments if they are `void`.
+ * Block declarations should always include argument names.
 
 ```objc
 void (^blockName1)(void) = ^{
