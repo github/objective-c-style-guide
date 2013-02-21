@@ -83,6 +83,7 @@ if (something == nil) {
  * Block definitions should omit their return type when possible.
  * Block definitions should omit their arguments if they are `void`.
  * Block definitions should always include argument names.
+ * Block definitions should not be `typedef`’d.
 
 ```objc
 void (^blockName1)(void) = ^{
