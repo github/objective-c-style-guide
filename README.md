@@ -78,7 +78,7 @@ void GHAwesomeFunction(BOOL hasSomeArgs);
 ## Expressions
 
  * Don't access an ivar unless you're in `-init`, `-dealloc` or a custom accessor.
- * Use dot-syntax when invoking idempotent methods, including setters and class methods (like `NSFileManager.defaultManager`).
+ * Use dot-syntax when accessing / setting properties and internal states. Never invoke a method with dot-syntax.
  * Use object literals, boxed expressions, and subscripting over the older, grosser alternatives.
  * Comparisons should be explicit for everything except `BOOL`s.
  * Prefer positive comparisons to negative.
