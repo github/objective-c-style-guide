@@ -118,6 +118,12 @@ if (something == nil) {
 }
 ```
 
+## Exceptions
+
+ * Don't use exceptions for flow control
+ * Use exceptions for programmer error, not error handling
+   * For error handling use error byref or RAC error subscriptions
+
 ## Blocks
 
  * Blocks should have a space between their return type and name.
