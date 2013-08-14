@@ -123,6 +123,7 @@ if (something == nil) {
  * Don't use exceptions for flow control
  * Use exceptions for programmer error, not error handling
    * For error handling use error byref or RAC error subscriptions
+ * Use `@throw` rather than `[NSException raise:...]`
 
 ## Blocks
 
