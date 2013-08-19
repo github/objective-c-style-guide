@@ -94,10 +94,15 @@ Blah *a = (stuff == thing ? foo : bar);
 Blah *b = thingThatCouldBeNil ?: defaultValue;
 ```
 
- * There shouldn't be a space between a cast and the variable being cast.
+ * Separate binary operands with a single space, but unary operands and casts with none:
 
-``` objc
+```c
+void *ptr = &value + 10 * 3;
 NewType a = (NewType)b;
+
+for (int i = 0; i < 10; i++) {
+    doCoolThings();
+}
 ```
 
 ## Control Structures
