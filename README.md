@@ -94,7 +94,7 @@ Blah *a = (stuff == thing ? foo : bar);
 Blah *b = thingThatCouldBeNil ?: defaultValue;
 ```
 
- * Separate binary operands with a single space, and unary operands with none:
+ * Separate binary operands with a single space, but unary operands and casts with none:
 
 ```c
 void *ptr = &value + 10 * 3;
