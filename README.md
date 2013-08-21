@@ -123,7 +123,6 @@ if (something == nil) {
  * Don't use exceptions for flow control.
  * Use exceptions only to indicate programmer error.
  * To indicate errors, use an `NSError **` argument or send an error on a [ReactiveCocoa](https://github.com/ReactiveCocoa/ReactiveCocoa) signal.
- * Use `@throw` rather than `[NSException raise:...]`
 
 ## Blocks
 
