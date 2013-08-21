@@ -123,6 +123,12 @@ if (something == nil) {
 }
 ```
 
+## Exceptions and Error Handling
+
+ * Don't use exceptions for flow control.
+ * Use exceptions only to indicate programmer error.
+ * To indicate errors, use an `NSError **` argument or send an error on a [ReactiveCocoa](https://github.com/ReactiveCocoa/ReactiveCocoa) signal.
+
 ## Blocks
 
  * Blocks should have a space between their return type and name.
