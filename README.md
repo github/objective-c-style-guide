@@ -115,7 +115,7 @@ for (int i = 0; i < 10; i++) {
  * No spaces between parentheses and their contents.
 
 ```objc
-if (shitIsBad) return;
+if (somethingIsBad) return;
 
 if (something == nil) {
 	// do stuff
@@ -154,21 +154,21 @@ id (^blockName2)(id) = ^ id (id args) {
  * Dictionary literals should have no space between the key and the colon, and a single space between colon and value.
 
 ``` objc
-NSArray *theShit = @[ @1, @2, @3 ];
+NSArray *theStuff = @[ @1, @2, @3 ];
 
-NSDictionary *keyedShit = @{ GHDidCreateStyleGuide: @YES };
+NSDictionary *keyedStuff = @{ GHDidCreateStyleGuide: @YES };
 ```
 
  * Longer or more complex literals should be split over multiple lines (optionally with a terminating comma):
 
 ``` objc
-NSArray *theShit = @[
+NSArray *theStuff = @[
     @"Got some long string objects in here.",
     [AndSomeModelObjects too],
     @"Moar strings."
 ];
 
-NSDictionary *keyedShit = @{
+NSDictionary *keyedStuff = @{
     @"this.key": @"corresponds to this value",
     @"otherKey": @"remoteData.payload",
     @"some": @"more",
