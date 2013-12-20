@@ -24,8 +24,8 @@ Unless explicitly contradicted below, assume that all of Apple's guidelines appl
 
 #pragma mark Lifecycle
 
-+ (id)objectWithThing:(id)thing {}
-- (id)init {}
++ (instancetype)objectWithThing:(id)thing {}
+- (instancetype)init {}
 
 #pragma mark Drawing
 
