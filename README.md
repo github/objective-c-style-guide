@@ -110,7 +110,7 @@ for (int i = 0; i < 10; i++) {
 
 ## Control Structures
 
- * Always surround `if` bodies with curly braces if there is an `else`. Single-line `if` bodies without an `else` should be on the same line as the `if`. 
+ * Always surround `if` bodies with curly braces if there is an `else`. Single-line `if` bodies without an `else` should be on the same line as the `if`.
  * All curly braces should begin on the same line as their associated statement. They should end on a new line.
  * Put a single space after keywords and before their parentheses.
  * Return and break early.
