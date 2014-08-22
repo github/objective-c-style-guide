@@ -6,8 +6,6 @@ Unless explicitly contradicted below, assume that all of Apple's guidelines appl
  * Tabs, not spaces.
  * End files with a newline.
  * Make liberal use of vertical whitespace to divide code into logical chunks.
- * Don’t leave trailing whitespace.
-    * Not even leading indentation on blank lines.
 
 ## Documentation and Organization
 
@@ -59,12 +57,12 @@ Unless explicitly contradicted below, assume that all of Apple's guidelines appl
  * Declare properties `copy` if they return immutable objects and aren't ever mutated in the implementation. `strong` should only be used when exposing a mutable object, or an object that does not conform to `<NSCopying>`.
  * Instance variables should be prefixed with an underscore (just like when implicitly synthesized).
  * Don't put a space between an object type and the protocol it conforms to.
-
+ 
 ```objc
 @property (attributes) id<Protocol> object;
 @property (nonatomic, strong) NSObject<Protocol> *object;
 ```
-
+ 
  * C function declarations should have no space before the opening parenthesis, and should be namespaced just like a class.
 
 ```objc
@@ -110,7 +108,7 @@ for (int i = 0; i < 10; i++) {
 
 ## Control Structures
 
- * Always surround `if` bodies with curly braces if there is an `else`. Single-line `if` bodies without an `else` should be on the same line as the `if`.
+ * Always surround `if` bodies with curly braces if there is an `else`. Single-line `if` bodies without an `else` should be on the same line as the `if`. 
  * All curly braces should begin on the same line as their associated statement. They should end on a new line.
  * Put a single space after keywords and before their parentheses.
  * Return and break early.
