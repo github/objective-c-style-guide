@@ -59,12 +59,12 @@ Unless explicitly contradicted below, assume that all of Apple's guidelines appl
  * Declare properties `copy` if they return immutable objects and aren't ever mutated in the implementation. `strong` should only be used when exposing a mutable object, or an object that does not conform to `<NSCopying>`.
  * Instance variables should be prefixed with an underscore (just like when implicitly synthesized).
  * Don't put a space between an object type and the protocol it conforms to.
- 
+
 ```objc
 @property (attributes) id<Protocol> object;
 @property (nonatomic, strong) NSObject<Protocol> *object;
 ```
- 
+
  * C function declarations should have no space before the opening parenthesis, and should be namespaced just like a class.
 
 ```objc
