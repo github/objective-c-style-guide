@@ -57,6 +57,7 @@ Unless explicitly contradicted below, assume that all of Apple's guidelines appl
  * Declare properties `readonly` if they are only set once in `-init`.
  * Don't use `@synthesize` unless the compiler requires it. Note that optional properties in protocols must be explicitly synthesized in order to exist.
  * Declare properties `copy` if they return immutable objects and aren't ever mutated in the implementation. `strong` should only be used when exposing a mutable object, or an object that does not conform to `<NSCopying>`.
+ * Avoid `weak` properties whenever possible. A long-lived weak reference is usually a code smell that should be refactored out.
  * Instance variables should be prefixed with an underscore (just like when implicitly synthesized).
  * Don't put a space between an object type and the protocol it conforms to.
 
