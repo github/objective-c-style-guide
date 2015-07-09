@@ -3,7 +3,7 @@ Unless explicitly contradicted below, assume that all of Apple's guidelines appl
 
 ## Whitespace
 
- * Tabs, not spaces.
+ * Spaces, not tabs.
  * End files with a newline.
  * Make liberal use of vertical whitespace to divide code into logical chunks.
  * Don’t leave trailing whitespace.
@@ -51,12 +51,10 @@ Unless explicitly contradicted below, assume that all of Apple's guidelines appl
 ## Declarations
 
  * Never declare an ivar unless you need to change its type from its declared property.
- * Don’t use line breaks in method declarations.
  * Prefer exposing an immutable type for a property if it being mutable is an implementation detail. This is a valid reason to declare an ivar for a property.
  * Always declare memory-management semantics even on `readonly` properties.
  * Declare properties `readonly` if they are only set once in `-init`.
  * Don't use `@synthesize` unless the compiler requires it. Note that optional properties in protocols must be explicitly synthesized in order to exist.
- * Declare properties `copy` if they return immutable objects and aren't ever mutated in the implementation. `strong` should only be used when exposing a mutable object, or an object that does not conform to `<NSCopying>`.
  * Avoid `weak` properties whenever possible. A long-lived weak reference is usually a code smell that should be refactored out.
  * Instance variables should be prefixed with an underscore (just like when implicitly synthesized).
  * Don't put a space between an object type and the protocol it conforms to.
@@ -82,7 +80,6 @@ void GHAwesomeFunction(BOOL hasSomeArgs);
 ## Expressions
 
  * Don't access an ivar unless you're in `-init`, `-dealloc` or a custom accessor.
- * Use dot-syntax when invoking idempotent methods, including setters and class methods (like `NSFileManager.defaultManager`).
  * Use object literals, boxed expressions, and subscripting over the older, grosser alternatives.
  * Comparisons should be explicit for everything except `BOOL`s.
  * Prefer positive comparisons to negative.
@@ -152,7 +149,6 @@ id (^blockName2)(id) = ^ id (id args) {
 
 ## Literals
 
- * Avoid making numbers a specific type unless necessary (for example, prefer `5` to `5.0`, and `5.3` to `5.3f`).
  * The contents of array and dictionary literals should have a space on both sides.
  * Dictionary literals should have no space between the key and the colon, and a single space between colon and value.
 
@@ -183,5 +179,5 @@ NSDictionary *keyedStuff = @{
 ## Categories
 
  * Categories should be named for the sort of functionality they provide. Don't create umbrella categories.
- * Category methods should always be prefixed.
+ * Category methods should always be prefixed FOR EXTERNAL CLASSES.
  * If you need to expose private methods for subclasses or unit testing, create a class extension named `Class+Private`.
