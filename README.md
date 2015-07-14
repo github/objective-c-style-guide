@@ -14,7 +14,7 @@ Unless explicitly contradicted below, assume that all of Apple's guidelines appl
  * All method declarations should be documented.
  * Comments should be hard-wrapped at 80 characters.
  * Comments should be [Tomdoc](http://tomdoc.org/)-style.
- * Document whether object parameters allow `nil` as a value.
+ * Use Objective-C [nullability annotations](https://developer.apple.com/swift/blog/?id=25) to document nullability
  * Use `#pragma mark`s to categorize methods into functional groupings and protocol implementations, following this general structure:
 
 ```objc
@@ -55,7 +55,6 @@ Unless explicitly contradicted below, assume that all of Apple's guidelines appl
  * Always declare memory-management semantics even on `readonly` properties.
  * Declare properties `readonly` if they are only set once in `-init`.
  * Don't use `@synthesize` unless the compiler requires it. Note that optional properties in protocols must be explicitly synthesized in order to exist.
- * Avoid `weak` properties whenever possible. A long-lived weak reference is usually a code smell that should be refactored out.
  * Instance variables should be prefixed with an underscore (just like when implicitly synthesized).
  * Don't put a space between an object type and the protocol it conforms to.
 
@@ -108,7 +107,7 @@ for (int i = 0; i < 10; i++) {
 
 ## Control Structures
 
- * Always surround `if` bodies with curly braces if there is an `else`. Single-line `if` bodies without an `else` should be on the same line as the `if`.
+ * Always surround `if` bodies with curly braces if there is an `else`.
  * All curly braces should begin on the same line as their associated statement. They should end on a new line.
  * Put a single space after keywords and before their parentheses.
  * Return and break early.
