@@ -135,6 +135,7 @@ if (something == nil) {
  * Block definitions should omit their return type when possible.
  * Block definitions should omit their arguments if they are `void`.
  * Parameters in block types should be named unless the block is initialized immediately.
+ * Reused blocks should have `typedef`ed name.
 
 ```objc
 void (^blockName1)(void) = ^{
@@ -154,7 +155,7 @@ id (^blockName2)(id) = ^ id (id args) {
 ``` objc
 NSArray *theStuff = @[ @1, @2, @3 ];
 
-NSDictionary *keyedStuff = @{ GHDidCreateStyleGuide: @YES };
+NSDictionary *keyedStuff = @{GHDidCreateStyleGuide: @YES};
 ```
 
  * Longer or more complex literals should be split over multiple lines (optionally with a terminating comma):
@@ -180,3 +181,6 @@ NSDictionary *keyedStuff = @{
  * Categories should be named for the sort of functionality they provide. Don't create umbrella categories.
  * Category methods should always be prefixed FOR EXTERNAL CLASSES.
  * If you need to expose private methods for subclasses or unit testing, create a class extension named `Class+Private`.
+
+ # Protocol Implementation
+  * classes implementing some protocols should have `Impl` suffix in their names (Future Swift migration benefits, readability benefits). Example: `LocationServiceImpl`
