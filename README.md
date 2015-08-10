@@ -73,10 +73,10 @@ void GHAwesomeFunction(BOOL hasSomeArgs);
 ```
 
  * Constructors should generally return [`instancetype`](http://clang.llvm.org/docs/LanguageExtensions.html#related-result-types) rather than `id`.
- * Prefer C99 struct initialiser syntax to helper functions (such as `CGRectMake()`).
+ * Prefer helper functions (such as `CGRectMake()`) to C99 struct initialiser syntax.
 
 ```objc
-  CGRect rect = { .origin.x = 3.0, .origin.y = 12.0, .size.width = 15.0, .size.height = 80.0 };
+  CGRect rect = CGRectMake(3.0, 12.0, 15.0, 80.0);
    ```
 
 ## Expressions
