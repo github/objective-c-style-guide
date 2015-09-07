@@ -3,7 +3,7 @@ Unless explicitly contradicted below, assume that all of Apple's guidelines appl
 
 ## Whitespace
 
- * Tabs, not spaces.
+ * Spaces, not tabs.
  * End files with a newline.
  * Make liberal use of vertical whitespace to divide code into logical chunks.
  * Don’t leave trailing whitespace.
@@ -11,10 +11,9 @@ Unless explicitly contradicted below, assume that all of Apple's guidelines appl
 
 ## Documentation and Organization
 
- * All method declarations should be documented.
- * Comments should be hard-wrapped at 80 characters.
- * Comments should be [Tomdoc](http://tomdoc.org/)-style.
- * Document whether object parameters allow `nil` as a value.
+ * Method declarations should be documented to the extent possible.
+ * Comments should be [Appledoc](https://github.com/tomaz/appledoc/blob/master/CommentsFormattingStyle.markdown)-style.
+ * Document whether object parameters allow `nil` as a value or use the new `nullable` and `nonnull` annotations.
  * Use `#pragma mark`s to categorize methods into functional groupings and protocol implementations, following this general structure:
 
 ```objc
@@ -51,7 +50,6 @@ Unless explicitly contradicted below, assume that all of Apple's guidelines appl
 ## Declarations
 
  * Never declare an ivar unless you need to change its type from its declared property.
- * Don’t use line breaks in method declarations.
  * Prefer exposing an immutable type for a property if it being mutable is an implementation detail. This is a valid reason to declare an ivar for a property.
  * Always declare memory-management semantics even on `readonly` properties.
  * Declare properties `readonly` if they are only set once in `-init`.
@@ -183,5 +181,5 @@ NSDictionary *keyedStuff = @{
 ## Categories
 
  * Categories should be named for the sort of functionality they provide. Don't create umbrella categories.
- * Category methods should always be prefixed.
+ * Category methods should always be prefixed for system and third-party classes.
  * If you need to expose private methods for subclasses or unit testing, create a class extension named `Class+Private`.
