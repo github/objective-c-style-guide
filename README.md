@@ -18,32 +18,32 @@ Unless explicitly contradicted below, assume that all of Apple's guidelines appl
  * Use `#pragma mark`s to categorize methods into functional groupings and protocol implementations, following this general structure:
 
 ```objc
-#pragma mark Properties
+#pragma mark - Properties
 
 @dynamic someProperty;
 
 - (void)setCustomProperty:(id)value {}
 
-#pragma mark Lifecycle
+#pragma mark - Lifecycle
 
 + (instancetype)objectWithThing:(id)thing {}
 - (instancetype)init {}
 
-#pragma mark Drawing
+#pragma mark - Drawing
 
 - (void)drawRect:(CGRect) {}
 
-#pragma mark Another functional grouping
+#pragma mark - Another functional grouping
 
-#pragma mark GHSuperclass
+#pragma mark - GHSuperclass
 
 - (void)someOverriddenMethod {}
 
-#pragma mark NSCopying
+#pragma mark - NSCopying
 
 - (id)copyWithZone:(NSZone *)zone {}
 
-#pragma mark NSObject
+#pragma mark - NSObject
 
 - (NSString *)description {}
 ```
