@@ -3,7 +3,7 @@ Unless explicitly contradicted below, assume that all of Apple's guidelines appl
 
 ## Whitespace
 
- * Tabs, not spaces.
+ * Spaces, not tabs.
  * End files with a newline.
  * Make liberal use of vertical whitespace to divide code into logical chunks.
  * Don’t leave trailing whitespace.
@@ -11,10 +11,9 @@ Unless explicitly contradicted below, assume that all of Apple's guidelines appl
 
 ## Documentation and Organization
 
- * All method declarations should be documented.
- * Comments should be hard-wrapped at 80 characters.
- * Comments should be [Tomdoc](http://tomdoc.org/)-style.
- * Document whether object parameters allow `nil` as a value.
+ * Method declarations should be documented to the extent possible.
+ * Comments should be [Appledoc](https://github.com/tomaz/appledoc/blob/master/CommentsFormattingStyle.markdown)-style.
+ * Document whether object parameters allow `nil` as a value or use the new `nullable` and `nonnull` annotations.
  * Use `#pragma mark`s to categorize methods into functional groupings and protocol implementations, following this general structure:
 
 ```objc
@@ -51,7 +50,6 @@ Unless explicitly contradicted below, assume that all of Apple's guidelines appl
 ## Declarations
 
  * Never declare an ivar unless you need to change its type from its declared property.
- * Don’t use line breaks in method declarations.
  * Prefer exposing an immutable type for a property if it being mutable is an implementation detail. This is a valid reason to declare an ivar for a property.
  * Always declare memory-management semantics even on `readonly` properties.
  * Declare properties `readonly` if they are only set once in `-init`.
@@ -183,5 +181,25 @@ NSDictionary *keyedStuff = @{
 ## Categories
 
  * Categories should be named for the sort of functionality they provide. Don't create umbrella categories.
- * Category methods should always be prefixed.
+ * Category methods should always be prefixed for system and third-party classes.
  * If you need to expose private methods for subclasses or unit testing, create a class extension named `Class+Private`.
+
+## Nullability Annotations
+
+Always include [*nullability annotations*](https://developer.apple.com/swift/blog/?id=25) in header files.
+
+Generally, it's a good idea to make the entirety of headers as *audited for nullability*, which makes any simple pointer type to be assumed as `nonnull` by the compiler. You do this by wrapping the whole file with the `NS_ASSUME_NONNULL_BEGIN` and `NS_ASSUME_NONNULL_END` macros. You can then opt any property or argument declaration that can take `nil` values out by annotating it as `nullable`.
+
+**DO NOT** add *nullability annotations* to implementation files.
+
+## Lightweight Generics
+
+Always use [*lightweight generic parametrization*](https://developer.apple.com/library/prerelease/ios/documentation/Swift/Conceptual/BuildingCocoaApps/InteractingWithObjective-CAPIs.html#//apple_ref/doc/uid/TP40014216-CH4-ID173) when declaring `NSArray`, `NSSet` and `NSDictionary` types. This tells the compiler which kind of objects these *Foundation collection classes* will contain. It improves type-safety and interoperability with *Swift*.
+
+Use the same whitespace rules as when declaring *protocol conformance*:
+
+```objc
+@property NSArray<BKDMediaEndpoint *> *endpoints;
+@property NSDictionary<NSString *, BDKEnvironment *> *environments;
+@property NSSet<NSString *> *names;
+```
