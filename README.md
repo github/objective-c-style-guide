@@ -183,3 +183,23 @@ NSDictionary *keyedStuff = @{
  * Categories should be named for the sort of functionality they provide. Don't create umbrella categories.
  * Category methods should always be prefixed for system and third-party classes.
  * If you need to expose private methods for subclasses or unit testing, create a class extension named `Class+Private`.
+
+## Nullability Annotations
+
+Always include [*nullability annotations*](https://developer.apple.com/swift/blog/?id=25) in header files.
+
+Generally, it's a good idea to make the entirety of headers as *audited for nullability*, which makes any simple pointer type to be assumed as `nonnull` by the compiler. You do this by wrapping the whole file with the `NS_ASSUME_NONNULL_BEGIN` and `NS_ASSUME_NONNULL_END` macros. You can then opt any property or argument declaration that can take `nil` values out by annotating it as `nullable`.
+
+**DO NOT** add *nullability annotations* to implementation files.
+
+## Lightweight Generics
+
+Always use [*lightweight generic parametrization*](https://developer.apple.com/library/prerelease/ios/documentation/Swift/Conceptual/BuildingCocoaApps/InteractingWithObjective-CAPIs.html#//apple_ref/doc/uid/TP40014216-CH4-ID173) when declaring `NSArray`, `NSSet` and `NSDictionary` types. This tells the compiler which kind of objects these *Foundation collection classes* will contain. It improves type-safety and interoperability with *Swift*.
+
+Use the same whitespace rules as when declaring *protocol conformance*:
+
+```objc
+@property NSArray<BKDMediaEndpoint *> *endpoints;
+@property NSDictionary<NSString *, BDKEnvironment *> *environments;
+@property NSSet<NSString *> *names;
+```
