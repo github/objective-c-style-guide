@@ -186,3 +186,9 @@ NSDictionary *keyedStuff = @{
 ## Protocol Implementation
 
   * Avoid name collision between protocols and classes implementing protocols.
+
+## Tests
+
+ * XCTest framework with OCMock (for mocking) should be used. Manual mocking is also possible when appropriate.
+ * When writing equality assertions, always pass actual value as a first argument and expected value as a second.
+ * Always define mock objects as `id`, because types like `OCMockObject <ProtocolToMock> *` look overloaded and it's not always possible to declare the right type (i.e. when you're mocking a class, not protocol).
