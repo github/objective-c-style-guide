@@ -156,7 +156,7 @@ id (^blockName2)(id) = ^ id (id args) {
 ``` objc
 NSArray *theStuff = @[ @1, @2, @3 ];
 
-NSDictionary *keyedStuff = @{GHDidCreateStyleGuide : @YES};
+NSDictionary *keyedStuff = @{ GHDidCreateStyleGuide : @YES };
 ```
 
  * Longer or more complex literals should be split over multiple lines (optionally with a terminating comma):
