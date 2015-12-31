@@ -193,12 +193,12 @@ NSDictionary *keyedStuff = @{
  * When writing equality assertions, always pass actual value as a first argument and expected value as a second.
  * Always define mock objects as `id`, because types like `OCMockObject <ProtocolToMock> *` look overloaded and it's not always possible to declare the right type (i.e. when you're mocking a class, not protocol).
 
- ## clang-format
+## clang-format
 
- Proposed .clang-format file for use with Xcode. Find more on installing clang-format tool with google. As an option of using with Xcode I'd suggest [Alcatraz](http://alcatraz.io)
+Proposed .clang-format file for use with Xcode. Find more on installing clang-format tool with google. As an option of using clang-format with Xcode, I'd suggest [Alcatraz](http://alcatraz.io)
 
- Easy way to add this clang-format file to your project is:
+Easy way to add this clang-format file to your project is:
 * go to your project root
 * do the command:
-    `curl -o .clang-format https://raw.githubusercontent.com/gelosi/objective-c-style-guide/master/clang-format`
+ ```curl -o .clang-format https://raw.githubusercontent.com/gelosi/objective-c-style-guide/master/clang-format```
 * add file to your project's git 
