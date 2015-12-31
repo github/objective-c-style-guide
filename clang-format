@@ -1,0 +1,16 @@
+BasedOnStyle: LLVM
+AlignAfterOpenBracket: false
+AllowShortFunctionsOnASingleLine: None
+AlwaysBreakBeforeMultilineStrings: false
+BreakBeforeBinaryOperators: All
+BreakBeforeBraces: Linux
+ColumnLimit: 120
+ExperimentalAutoDetectBinPacking: true
+IndentCaseLabels: true
+IndentWidth: 4
+MaxEmptyLinesToKeep: 2
+ObjCBlockIndentWidth: 4
+ObjCSpaceAfterProperty: true
+ObjCSpaceBeforeProtocolList: true
+SpaceAfterCStyleCast: true
+TabWidth: 4
