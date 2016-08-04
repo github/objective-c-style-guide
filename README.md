@@ -14,7 +14,7 @@ Unless explicitly contradicted below, assume that all of Apple's guidelines appl
  * All method declarations should be documented.
  * Comments should be hard-wrapped at 80 characters.
  * Comments should be [Tomdoc](http://tomdoc.org/)-style.
- * Document whether object parameters allow `nil` as a value.
+ * Document parameters that allow `nil` as a value. If a parameter does _not_ allow `nil`, nothing needs to be said.
  * Use `#pragma mark`s to categorize methods into functional groupings and protocol implementations, following this general structure:
 
 ```objc
