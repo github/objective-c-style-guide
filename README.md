@@ -8,7 +8,7 @@ Unless explicitly contradicted below, assume that all of Apple's guidelines appl
 * [Declarations](#declarations)
 * [Expressions](#expressions)
 * [Control Structures](#control-structures)
-* [Exceptions and Error Handling](#exceptions and-error-handling)
+* [Exceptions and Error Handling](#exceptions-and-error-handling)
 * [Blocks](#blocks)
 * [Literals](#literals)
 * [Categories](#categories)
