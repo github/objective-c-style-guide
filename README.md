@@ -5,6 +5,19 @@
 These guidelines build on Apple's existing [Coding Guidelines for Cocoa](https://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/CodingGuidelines/CodingGuidelines.html).
 Unless explicitly contradicted below, assume that all of Apple's guidelines apply as well.
 
+## Table of Contents
+
+* [Whitespace](#whitespace)
+* [Documentation and Organization](#documentation-and-organization)
+* [Declarations](#declarations)
+* [Expressions](#expressions)
+* [Control Structures](#control-structures)
+* [Exceptions and Error Handling](#exceptions-and-error-handling)
+* [Blocks](#blocks)
+* [Literals](#literals)
+* [Categories](#categories)
+
+
 ## Whitespace
 
  * Tabs, not spaces.
