@@ -1,3 +1,7 @@
+# This repository is no longer active.
+
+-----
+
 These guidelines build on Apple's existing [Coding Guidelines for Cocoa](https://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/CodingGuidelines/CodingGuidelines.html).
 Unless explicitly contradicted below, assume that all of Apple's guidelines apply as well.
 
